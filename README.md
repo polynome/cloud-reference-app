@@ -8,6 +8,8 @@
 - [X] Database
 - [ ] Worker
 
+Living at https://polynome-cloud-reference-app.herokuapp.com
+
 For local dev:
 `heroku local web`
 
@@ -29,6 +31,11 @@ To deploy:
 
 ## Pivotal Web Services (Cloud Foundry)
 
-- [ ] Web
-- [ ] Database
+- [X] Web
+- [X] Database
 - [ ] Worker
+
+Living at http://cloud-reference-app.cfapps.io/
+
+To deploy:
+`cf push`

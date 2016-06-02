@@ -3,4 +3,4 @@ applications:
 - name: cloud-reference-app
   memory: 512M
   instances: 1
-  random-route: true
+  path: target/cloud-reference-app-0.0.1-SNAPSHOT.jar

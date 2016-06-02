@@ -7,7 +7,7 @@ import org.springframework.stereotype.*;
 
 @Controller
 @SpringBootApplication
-public class Applicaion {
+public class Application {
 
     @RequestMapping("/")
     @ResponseBody
@@ -16,6 +16,6 @@ public class Applicaion {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }

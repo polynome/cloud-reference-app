@@ -39,8 +39,8 @@ public class Application {
     @RequestMapping("/")
     @ResponseBody
     String home() throws SQLException {
-        List<Map<String, Object>> result =  jdbcTemplate.queryForList("SELECT 1 + 2 as total");
-        return "Hello World: " + result.get(0).get("total");
+        List<Map<String, Object>> result =  jdbcTemplate.queryForList("SELECT version()");
+        return "Successfully connected to: " + result.get(0).get("version");
     }
 
     public static void main(String[] args) {

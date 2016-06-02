@@ -4,8 +4,8 @@
 
 ## Heroku
 
-- [ ] Web
-- [ ] Database
+- [X] Web
+- [X] Database
 - [ ] Worker
 
 For local dev:
@@ -28,6 +28,7 @@ To deploy:
 - [ ] Worker
 
 ## Pivotal Web Services (Cloud Foundry)
+
 - [ ] Web
 - [ ] Database
 - [ ] Worker

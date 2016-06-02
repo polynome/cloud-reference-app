@@ -1,4 +1,4 @@
-package demo;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +12,7 @@ public class DemoApplication {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-      return "Hello World!";
+      return "Hello World from Spring!!!!";
     }
 
     public static void main(String[] args) {

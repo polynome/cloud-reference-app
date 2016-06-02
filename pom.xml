@@ -3,13 +3,13 @@
 	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example</groupId>
-  <artifactId>heroku-java-spring</artifactId>
+  <groupId>co.polynome</groupId>
+  <artifactId>cloud-reference-app</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>demo</name>
-  <description>Demo project for Spring Boot</description>
+  <name>cloud-reference-app</name>
+  <description>How to Cloud</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>

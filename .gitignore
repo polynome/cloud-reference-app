@@ -1,3 +1,4 @@
 target/
 .idea/
 cloud-reference-app.iml
+/.env

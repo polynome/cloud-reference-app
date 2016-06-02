@@ -13,7 +13,6 @@ import javax.sql.DataSource;
 
 @SpringBootApplication
 @Configuration
-@EnableAutoConfiguration
 public class Application {
 
     @Bean

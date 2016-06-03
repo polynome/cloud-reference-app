@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Best Rappers of All Time</title>
+</head>
+
+<body>
+
+<h1>Rappers</h1>
+<ul>
+    <li th:each="rapper : ${rappers}">
+        <p th:text="${rapper.name}">Big Pun</p>
+    </li>
+</ul>
+
+<h1>Add a Rapper</h1>
+<form action="#" th:action="@{/rappers/create}" th:object="${rapper}" method="post">
+    <input type="text" th:field="*{name}" />
+    <input type="submit" value="Add" />
+</form>
+
+</body>
+</html>

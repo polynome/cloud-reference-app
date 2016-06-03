@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Primary;
 import javax.sql.DataSource;
 
 @SpringBootApplication
-@Configuration
 public class Application {
 
     @Bean

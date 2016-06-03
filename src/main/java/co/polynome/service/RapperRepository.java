@@ -7,4 +7,5 @@ import org.springframework.data.repository.Repository;
 
 public interface RapperRepository extends Repository<Rapper, Long> {
     Page<Rapper> findAll(Pageable pageable);
+    Rapper save(Rapper rapper);
 }

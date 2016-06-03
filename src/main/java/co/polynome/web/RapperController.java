@@ -5,25 +5,21 @@ import co.polynome.service.RapperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
-import java.sql.SQLException;
-
 @Controller
 @RequestMapping(value="/rappers")
 public class RapperController {
     @Autowired
-    private RapperRepository rappers;
+    private RapperRepository repository;
 
     @RequestMapping(method = RequestMethod.GET)
     @Transactional(readOnly = true)
     public String index(Model model) {
-        final Page<Rapper> rappers = this.rappers.findAll(new PageRequest(0, 10));
+        final Page<Rapper> rappers = repository.findAll(new PageRequest(0, 10));
         model.addAttribute("rappers", rappers);
         model.addAttribute("rapper", new Rapper());
 
@@ -45,7 +41,7 @@ public class RapperController {
     @RequestMapping(value="/create", method = RequestMethod.POST)
     @Transactional(readOnly = false)
     public String create(@ModelAttribute Rapper rapper, Model model) {
-        System.out.println(rapper);
-        return index(model); // TODO redirect
+        repository.save(rapper);
+        return "redirect:/rappers";
     }
 }

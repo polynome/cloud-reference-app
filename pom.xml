@@ -61,10 +61,30 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+
+        <dependency>
+              <groupId>com.google.cloud.sql</groupId>
+              <artifactId>mysql-socket-factory</artifactId>
+              <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>gcloud-maven-plugin</artifactId>
+                <version>2.0.9.106.v20160420</version>
+                <configuration>
+                    <gcloud_directory>/opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk</gcloud_directory>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

@@ -1,0 +1,4 @@
+runtime: java
+vm: true
+env_variables:
+  JDBC_DATABASE_URL: jdbc:mysql://google/cloud_reference_app?cloudSqlInstance=glx-flexible:us-central1:cloud-reference-app-flexible&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=root

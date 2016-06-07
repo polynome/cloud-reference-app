@@ -68,9 +68,9 @@
         </dependency>
 
         <dependency>
-              <groupId>com.google.cloud.sql</groupId>
-              <artifactId>mysql-socket-factory</artifactId>
-              <version>1.0.0</version>
+            <groupId>com.google.cloud.sql</groupId>
+            <artifactId>mysql-socket-factory</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>

@@ -1,0 +1,1 @@
+ALTER TABLE rapper ADD COLUMN banner TEXT;

@@ -73,6 +73,12 @@
               <version>1.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.lalyos</groupId>
+            <artifactId>jfiglet</artifactId>
+            <version>0.0.7</version>
+        </dependency>
+
     </dependencies>
 
     <build>

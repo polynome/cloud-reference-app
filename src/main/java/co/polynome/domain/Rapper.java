@@ -13,6 +13,9 @@ public class Rapper implements Serializable {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = true)
+    private String banner;
+
     public Long getId() {
         return id;
     }
@@ -27,5 +30,13 @@ public class Rapper implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
     }
 }

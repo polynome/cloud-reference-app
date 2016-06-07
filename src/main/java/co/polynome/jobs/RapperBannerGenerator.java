@@ -14,9 +14,14 @@ public class RapperBannerGenerator {
     @Autowired
     public RapperRepository rapperRepository;
 
-    public void run(Long primaryKey) throws IOException {
-        final Rapper rapper = rapperRepository.findOne(primaryKey);
-        rapper.setBanner(FigletFont.convertOneLine(rapper.getName()));
-        rapperRepository.save(rapper);
+    // TODO make transactional
+    public void run(Long primaryKey) {
+        try {
+            final Rapper rapper = rapperRepository.findOne(primaryKey);
+            rapper.setBanner(FigletFont.convertOneLine(rapper.getName()));
+            rapperRepository.save(rapper);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

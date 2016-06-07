@@ -3,6 +3,8 @@ package co.polynome.web;
 import co.polynome.domain.Rapper;
 import co.polynome.jobs.RapperBannerGenerator;
 import co.polynome.service.RapperRepository;
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,12 +22,15 @@ public class RapperController {
     private RapperRepository repository;
 
     @Autowired
-    private RapperBannerGenerator bannerGenerator;
+    private AmqpTemplate amqpTemplate;
+
+    @Autowired
+    private Queue rabbitQueue;
 
     @RequestMapping(method = RequestMethod.GET)
     @Transactional(readOnly = true)
     public String index(Model model) {
-        final Page<Rapper> rappers = repository.findAll(new PageRequest(0, 10));
+        final Page<Rapper> rappers = repository.findAll(new PageRequest(0, 1000));
         model.addAttribute("rappers", rappers);
         model.addAttribute("rapper", new Rapper());
 
@@ -48,10 +53,8 @@ public class RapperController {
     @Transactional(readOnly = false)
     public String create(@ModelAttribute Rapper rapper, Model model) throws IOException {
         final Rapper saved = repository.save(rapper);
-
-        // TODO make async / worker
-        bannerGenerator.run(saved.getId());
-
+        // TODO push this outside of txn
+        amqpTemplate.convertAndSend(rabbitQueue.getName(), new Object[]{"RapperBannerGenerator", saved.getId()});
         return "redirect:/rappers";
     }
 }

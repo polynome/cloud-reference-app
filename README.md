@@ -35,7 +35,11 @@ To deploy:
 - [X] Database
 - [ ] Worker
 
-Living at http://cloud-reference-app.cfapps.io/
+Living at http://cloud-reference-app-web.cfapps.io/
 
 To deploy:
 `cf push`
+
+Cloud Foundry makes it difficult to send command-line arguments to an
+app. To switch between web and worker, we set the enviornmental
+variable SPRING_PROFILES_ACTIVE to the appropriate type.

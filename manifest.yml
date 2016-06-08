@@ -1,7 +1,12 @@
 ---
 applications:
-- name: cloud-reference-app
+- name: cloud-reference-app-web
   memory: 512M
   instances: 1
   path: target/cloud-reference-app-0.0.1-SNAPSHOT.jar
-  arguments: --spring.profiles.active=web
+- name: cloud-reference-app-worker
+  memory: 512M
+  instances: 1
+  path: target/cloud-reference-app-0.0.1-SNAPSHOT.jar
+  no-route: true
+  health-check-type: none

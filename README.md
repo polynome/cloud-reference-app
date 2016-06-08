@@ -33,7 +33,7 @@ To deploy:
 
 - [X] Web
 - [X] Database
-- [ ] Worker
+- [X] Worker
 
 Living at http://cloud-reference-app-web.cfapps.io/
 

@@ -6,7 +6,7 @@
 
 - [X] Web
 - [X] Database
-- [ ] Worker
+- [X] Worker
 
 Living at https://polynome-cloud-reference-app.herokuapp.com
 

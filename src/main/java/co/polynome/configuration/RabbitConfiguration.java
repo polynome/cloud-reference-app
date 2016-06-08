@@ -1,4 +1,4 @@
-package co.polynome;
+package co.polynome.configuration;
 
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Queue;

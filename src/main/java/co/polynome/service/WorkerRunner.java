@@ -1,11 +1,7 @@
-package co.polynome;
+package co.polynome.service;
 
 
 import co.polynome.jobs.RapperBannerGenerator;
-import com.google.common.collect.ImmutableSet;
-import com.sun.corba.se.impl.ior.WireObjectKeyTemplate;
-import org.hibernate.jdbc.Work;
-import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageListener;
 import org.springframework.amqp.core.Queue;
@@ -15,12 +11,12 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.support.converter.SimpleMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-@SpringBootApplication
-public class WorkerApplication implements CommandLineRunner {
+@Profile("worker")
+@Component
+public class WorkerRunner implements CommandLineRunner {
     @Autowired
     private Queue rabbitQueue;
 
@@ -29,15 +25,6 @@ public class WorkerApplication implements CommandLineRunner {
 
     @Autowired
     private RapperBannerGenerator bannerGenerator;
-
-
-    public static void main(String[] args) {
-        final SpringApplication app = new SpringApplication();
-        app.setWebEnvironment(false);
-        app.setMainApplicationClass(WorkerApplication.class);
-        app.setSources(ImmutableSet.of(WorkerApplication.class)); // TODO why not automatic?
-        app.run(args);
-    }
 
     @Override
     public void run(String... strings) throws Exception {

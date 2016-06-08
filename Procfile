@@ -1,1 +1,2 @@
-web: java -Dserver.port=$PORT -jar  target/cloud-reference-app-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/cloud-reference-app-0.0.1-SNAPSHOT.jar --spring.profiles.active=web
+worker: java -Dserver.port=$PORT -jar target/cloud-reference-app-0.0.1-SNAPSHOT.jar --spring.profiles.active=worker

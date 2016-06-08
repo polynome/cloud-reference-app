@@ -6,6 +6,7 @@ import co.polynome.service.RapperRepository;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping(value="/rappers")
+@Profile("web")
 public class RapperController {
     @Autowired
     private RapperRepository repository;
